@@ -68,7 +68,7 @@ func (qc *Chart) GetUrl() (string, error) {
 	}
 
 	if len(qc.Version) > 0 {
-		sb.WriteString(fmt.Sprintf("&v=%s", url.QueryEscape(qc.Key)))
+		sb.WriteString(fmt.Sprintf("&v=%s", url.QueryEscape(qc.Version)))
 	}
 
 	return fmt.Sprintf("%s://%s:%d/chart?%s", qc.Scheme, qc.Host, qc.Port, sb.String()), nil
